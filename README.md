@@ -29,8 +29,6 @@ sys_moniter/
 ├── app.py
 ├── monitor.sh
 ├── README.md
-├── explain.txt
-├── explain.pdf
 ├── templates/
 │   └── index.html
 └── static/
@@ -106,6 +104,11 @@ Returns a JSON response containing:
 - The app uses a short cache TTL to reduce repeated script execution.
 - On Apple Silicon, GPU temperature falls back to the shared thermal package temperature.
 - The dashboard is designed for live presentation and debugging.
+
+## Documentation
+
+- [Full explanation](explain.txt)
+- [PDF version](explain.pdf)
 
 ## License
 
