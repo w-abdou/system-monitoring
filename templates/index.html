@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hardware Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="glass">
+            <h1>Hardware Dashboard</h1>
+            <div class="specs">
+                <p><span>CPU:</span> {{ cpu_name }}</p>
+                <p><span>GPU:</span> {{ gpu_name }}</p>
+            </div>
+        </header>
+
+        <div class="grid">
+            <div class="card glass">
+                <h3>System Load</h3>
+                <div class="stat-item">
+                    <label>CPU Usage <span id="cpu-txt">0%</span></label>
+                    <div class="progress-bar"><div id="cpu-fill" class="fill"></div></div>
+                </div>
+                <div class="stat-item">
+                    <label>RAM Usage <span id="ram-txt">0%</span></label>
+                    <div class="progress-bar"><div id="ram-fill" class="fill"></div></div>
+                    <p class="stat-detail" id="ram-detail">Used: 0GB / Total: 0GB</p>
+                </div>
+            </div>
+
+            <div class="card glass thermal-card">
+                <h3>Thermal Monitor</h3>
+                <div class="thermometer">
+                    <div id="temp-fill" class="temp-fill"></div>
+                </div>
+                <h2 id="temp-txt">--°C</h2>
+                <p>CPU Die Temperature</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card glass">
+                <h3>Storage & SMART</h3>
+                <div class="card-header">
+                    <span id="disk-val">0%</span>
+                    <span id="smart-status" class="tag">SMART: OK</span>
+                </div>
+                <div class="progress-bar"><div id="disk-fill" class="fill"></div></div>
+                <p class="stat-detail" id="disk-detail">Free: 0GB / Total: 0GB</p>
+            </div>
+
+            <div class="card glass gpu-card">
+                <h3>GPU Monitor</h3>
+                <div class="card-header">
+                    <span id="gpu-vendor" class="tag">GPU: Unknown</span>
+                </div>
+                <div class="stat-item">
+                    <label>Temperature <span id="gpu-temp-txt">--°C</span></label>
+                </div>
+                <p class="stat-detail" id="gpu-detail">Details: --</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card glass">
+                <h3>Network I/O</h3>
+                <p id="net-stats" style="font-family: monospace; color: #3b82f6;">Packets: --</p>
+                <p style="font-size: 10px; color: #666;">Interface: en0 (Active)</p>
+            </div>
+        </div>
+        <section class="console glass">
+            <h3>Live Console Report</h3>
+            <pre id="raw-log">Waiting for kernel...</pre>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

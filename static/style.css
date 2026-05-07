@@ -1,0 +1,119 @@
+:root {
+    --bg: #0b0e14;
+    --glass: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #3b82f6;
+}
+
+body {
+    background: var(--bg);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container { width: 100%; max-width: 1200px; }
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.specs p span { color: var(--accent); font-weight: bold; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.card { }
+
+.progress-bar {
+    background: rgba(255,255,255,0.1);
+    height: 10px;
+    border-radius: 5px;
+    margin: 10px 0 20px 0;
+    overflow: hidden;
+}
+
+.fill {
+    background: var(--accent);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.thermometer {
+    height: 120px;
+    width: 30px;
+    background: rgba(255,255,255,0.1);
+    margin: 10px auto;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.temp-fill {
+    width: 100%;
+    height: 0%;
+    background: #10b981;
+    transition: height 0.5s ease, background 0.5s ease;
+}
+
+.thermal-card { text-align: center; }
+
+.gpu-card { }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.stat-item {
+    margin-bottom: 15px;
+}
+
+.stat-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.stat-item span {
+    float: right;
+    color: var(--accent);
+}
+
+.stat-detail {
+    font-size: 11px;
+    color: #999;
+    margin: 8px 0 0 0;
+}
+
+pre {
+    background: #000;
+    color: #4ade80;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    height: 150px;
+    overflow-y: auto;
+}
