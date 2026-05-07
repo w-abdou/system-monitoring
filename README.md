@@ -107,11 +107,6 @@ Returns a JSON response containing:
 - On Apple Silicon, GPU temperature falls back to the shared thermal package temperature.
 - The dashboard is designed for live presentation and debugging.
 
-## Documentation
-
-- [Full explanation](explain.txt)
-- [PDF version](explain.pdf)
-
 ## License
 
 No license has been added yet.
